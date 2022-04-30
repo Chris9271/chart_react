@@ -10,7 +10,7 @@ app.use(cors({
 }));
 
 const option = {
-    target: process.env.SOURCE_API,
+    target: process.env.API_URL,
     changeOrigin: true,
     pathRewrite: {
         '^/api':''
