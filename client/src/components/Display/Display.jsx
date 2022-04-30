@@ -22,6 +22,7 @@ const Display = ({dist, setDist}) => {
 
   const sourceData = async() => {
     const source = await axios.get(API_URL, {withCredentials: true});
+    console.log(source)
     const result = source.data.result.records.filter((res) => res.district_code.substring(0, 5) === "63000");
     setTargetData(result);
     caculateCityTotal(result);
