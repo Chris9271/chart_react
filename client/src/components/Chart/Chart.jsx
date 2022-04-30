@@ -57,7 +57,6 @@ const Charts = ({dist, distData, setDistData, targetData}) => {
       ],
     };
 
-    // 點選不同行政區時，計算該行政區總和
     const caculateDistTotal = (dist, targetData) => {
         const distOrdinaryM = targetData.filter((res) => res.site_id.substring(3,6) === dist).reduce((acc, obj) => acc + Number(obj.household_ordinary_m), 0);
         const distOrdinaryF = targetData.filter((res) => res.site_id.substring(3,6) === dist).reduce((acc, obj) => acc + Number(obj.household_ordinary_f), 0);
@@ -97,7 +96,7 @@ const Charts = ({dist, distData, setDistData, targetData}) => {
       if(dist !== "" && distData.dist_household_ordinary_m !== 0){
         caculatePercentage(distData)
       }
-    }, [dist, distData.dist_household_ordinary_m])
+    }, [distData.dist_household_ordinary_m])
 
     return (
         <Bar options={options} data={data} className="mt-5" width={350} height={300}/>

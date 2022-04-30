@@ -26,10 +26,9 @@ const Display = ({dist, setDist}) => {
     setTargetData(result);
     caculateCityTotal(result);
     setIsLoading(true);
-}
+  }
 
-// 計算全行政區總和
-const caculateCityTotal = (result) => {
+  const caculateCityTotal = (result) => {
     const cityOrdinaryM = result.reduce((acc, obj) => acc + Number(obj.household_ordinary_m), 0);
     const cityOrdinaryF = result.reduce((acc, obj) => acc + Number(obj.household_ordinary_f), 0);
     const citySingleM = result.reduce((acc, obj) => acc + Number(obj.household_single_m), 0);
@@ -41,7 +40,7 @@ const caculateCityTotal = (result) => {
       city_household_single_m: citySingleM,
       city_household_single_f: citySingleF,
     })  
-}
+  }
   
   const handleDist = (e) => {
     setDist(e.target.value)
@@ -49,7 +48,7 @@ const caculateCityTotal = (result) => {
 
   useEffect(() => {
     sourceData();
-  }, [dist])
+  }, [])
 
   return (
     <div className="col-lg-9 py-3 bg-color content">
