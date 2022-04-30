@@ -1,0 +1,27 @@
+.bg-color {
+    background-color: #dbdada;
+}
+
+.content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.laptop {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 767px) {
+    .laptop {
+        display: none;
+    }
+
+    .content {
+        display: block;
+        height: calc(100vh - 236px);
+    }
+}
